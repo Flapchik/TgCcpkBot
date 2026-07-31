@@ -5,6 +5,12 @@ on:
       - closed
     branches:
       - master
+  workflow_dispatch:
+    inputs:
+      logLevel:
+        description: "Log level"
+        required: true
+        default: "debug"
 jobs:
   build:
     if: github.event.pull_request.merged == true
